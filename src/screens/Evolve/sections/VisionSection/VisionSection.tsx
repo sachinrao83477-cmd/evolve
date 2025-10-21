@@ -30,7 +30,7 @@ export const VisionSection = (): JSX.Element => {
         {images.map((image, index) => (
           <img
             key={index}
-            className="relative w-full max-w-[702px] h-auto aspect-[702/598] object-cover"
+            className="relative w-full max-w-[702px] h-auto aspect-[702/598] object-cover animate-marquee "
             alt={image.alt}
             src={image.src}
           />

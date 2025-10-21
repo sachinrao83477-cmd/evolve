@@ -14,21 +14,21 @@ const testimonialData = {
 
 const statsData = [
   {
-    value: "10K Hr+",
-    description: "Hours of courses completed",
+    value: "1k+",
+    description: "Already Registered Candidates",
   },
   {
-    value: "50K+",
-    description: "Rewards redeemed by learners",
+    value: "500K+",
+    description: "Expected Reach in 2025",
   },
   {
     value: "2K+",
     description: "Mentors and industry experts",
   },
-  {
-    value: "30K+",
-    description: "Active learners worldwide",
-  },
+  // {
+  //   value: "30K+",
+  //   description: "Active learners worldwide",
+  // },
 ];
 
 export const FooterSection = (): JSX.Element => {
@@ -41,7 +41,7 @@ export const FooterSection = (): JSX.Element => {
           </div>
 
           <h2 className="mt-[70px] max-w-[504px] [font-family:'Space_Grotesk',Helvetica] font-medium text-white text-[64px] tracking-[0] leading-[78px]">
-            Hear from Our Innovators
+            Hear from Our Founders
           </h2>
 
           <img

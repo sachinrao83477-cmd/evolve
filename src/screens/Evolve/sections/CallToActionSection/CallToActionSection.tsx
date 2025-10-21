@@ -9,7 +9,7 @@ export const CallToActionSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full max-w-[1200px] self-center mt-[200px] flex flex-col gap-[72px]">
+    <section id="vision" className="w-full max-w-[1200px] self-center mt-[200px] flex flex-col gap-[72px]">
       <header className="flex flex-col items-start gap-[60px] w-full max-w-[716px]">
         <div className="text-sm text-center tracking-[2.80px] leading-[22.4px] whitespace-nowrap [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
           REASON TO JOIN EVOLVE

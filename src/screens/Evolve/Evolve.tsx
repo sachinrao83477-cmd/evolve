@@ -12,7 +12,7 @@ import { VisionSection } from "./sections/VisionSection";
 
 export const Evolve = (): JSX.Element => {
   return (
-    <main className="bg-[#000000] overflow-hidden w-full min-w-[1440px] flex flex-col">
+    <main className="bg-[#000000] overflow-x-hidden w-full flex flex-col items-center">
       <MainContentSection />
       <VisionSection />
       <CallToActionSection />

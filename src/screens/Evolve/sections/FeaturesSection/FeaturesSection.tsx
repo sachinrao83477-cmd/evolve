@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
 
+// 1. Removed the 'expanded' property from the data.
+// This will now be controlled by component state.
 const audienceSegments = [
   {
     title: "Young Students 3-12 (School Level)",
@@ -11,32 +13,42 @@ const audienceSegments = [
       "Introduce technical and entrepreneurial skills early—learn AI, coding, problem-solving, and startup building. Prepare for future entrepreneurship, because the sooner you plant, the faster your dreams sprout.",
     subtitle: "Elevate Your Personal Skills",
     image: "/image-2.svg",
-    expanded: true,
   },
   {
     title: "Mentors & Educators",
-    description: "",
-    subtitle: "",
-    image: "",
-    expanded: false,
+    description:
+      "Empower the next generation by sharing your expertise. Our platform provides the tools to guide aspiring innovators, track their progress, and make a lasting impact on their entrepreneurial journey.",
+    subtitle: "Shape Future Leaders",
+    image: "/image-2.svg", // Placeholder image
   },
   {
     title: "Investors & Business-Minded Individuals",
-    description: "",
-    subtitle: "",
-    image: "",
-    expanded: false,
+    description:
+      "Discover and connect with promising new ventures. Get early access to a curated pipeline of talent and innovative projects, and play a pivotal role in bringing groundbreaking ideas to market.",
+    subtitle: "Find the Next Big Thing",
+    image: "/image-2.svg", // Placeholder image
   },
   {
     title: "College Students & Aspiring Entrepreneurs",
-    description: "",
-    subtitle: "",
-    image: "",
-    expanded: false,
+    description:
+      "Bridge the gap from theory to practice. Develop in-demand skills, build a strong portfolio, connect with mentors, and get the hands-on experience you need to launch your own startup.",
+    subtitle: "Launch Your Career",
+    image: "/image-2.svg", // Placeholder image
   },
 ];
 
 export const FeaturesSection = (): JSX.Element => {
+  // 2. Add state to track the open accordion item.
+  // We default it to '0' so the first item is open on page load.
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  // 3. Create a handler function to toggle the items.
+  const handleToggle = (index: number) => {
+    // If the clicked item is already open, close it (set state to null).
+    // Otherwise, open the clicked item.
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section className="w-full flex justify-center mt-[120px]">
       <div className="w-full max-w-[1320px] px-4">
@@ -72,7 +84,8 @@ export const FeaturesSection = (): JSX.Element => {
                           {segment.title}
                         </h3>
 
-                        {segment.expanded && (
+                        {/* 4. Check against state instead of the old 'expanded' property */}
+                        {openIndex === index && (
                           <>
                             <div className="flex flex-col gap-[72px] w-[360px]">
                               <p className="font-normal text-base leading-[25.6px] [font-family:'Space_Grotesk',Helvetica] text-white tracking-[0]">
@@ -106,21 +119,27 @@ export const FeaturesSection = (): JSX.Element => {
                           </>
                         )}
 
+                        {/* 5. Attach the click handler to the button */}
                         <button
                           className="w-[60px] h-[60px] bg-white rounded-[30px] flex items-center justify-center flex-shrink-0 hover:bg-white/90 transition-colors"
                           aria-label={`Expand ${segment.title}`}
+                          onClick={() => handleToggle(index)}
+                          aria-expanded={openIndex === index}
                         >
                           <img
-                            className="w-6 h-6"
-                            alt="Arrow left alt"
+                            // 6. Rotate the icon based on the open state for better UX
+                            className={`w-6 h-6 transition-transform duration-300 ${
+                              openIndex === index ? "rotate-180" : ""
+                            }`}
+                            alt="Toggle details"
                             src={
                               index === 0
                                 ? "/arrow-left-alt.png"
                                 : index === 1
-                                  ? "/arrow-left-alt-1.png"
-                                  : index === 2
-                                    ? "/arrow-left-alt-2.png"
-                                    : "/arrow-left-alt-3.png"
+                                ? "/arrow-left-alt-1.png"
+                                : index === 2
+                                ? "/arrow-left-alt-2.png"
+                                : "/arrow-left-alt-3.png"
                             }
                           />
                         </button>

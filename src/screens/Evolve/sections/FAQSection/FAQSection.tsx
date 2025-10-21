@@ -37,7 +37,7 @@ const featureCards = [
 
 export const FAQSection = (): JSX.Element => {
   return (
-    <section className="relative w-full flex justify-center mt-40">
+    <section  id="how-it-works" className="relative w-full flex justify-center mt-40">
       <div className="relative w-full max-w-[1202px] px-4">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="flex-shrink-0 lg:w-[476px]">

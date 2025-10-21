@@ -7,13 +7,9 @@ export const InnovationSection = (): JSX.Element => {
       <div className="relative flex flex-col items-center max-w-[821px]">
         <h1 className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-[64px] text-center tracking-[0] leading-[78px]">
           Your journey from learner
-          to&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;founder starts here
+          to founder starts here
         </h1>
-        <img
-          className="absolute top-[68px] left-1/2 -translate-x-1/2 translate-x-[202px] w-[68px] h-[68px]"
-          alt="Icon container"
-          src="/icon-container-1.svg"
-        />
+       
       </div>
 
       <Button className="h-auto inline-flex items-center justify-center gap-5 pl-[46px] pr-5 py-5 bg-white hover:bg-white/90 rounded-[18px] text-black">

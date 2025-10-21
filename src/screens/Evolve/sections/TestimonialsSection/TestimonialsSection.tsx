@@ -29,7 +29,7 @@ const faqData = [
 
 export const TestimonialsSection = (): JSX.Element => {
   return (
-    <section className="w-full relative mt-[200px] px-4">
+    <section id="FAQ" className="w-full relative mt-[200px] px-4">
       <div className="max-w-[1248px] mx-auto">
         <div className="text-center mb-[70px]">
           <div className="[font-family:'Space_Grotesk',Helvetica] font-medium text-[#ffffff] text-sm tracking-[2.80px] leading-[22.4px] whitespace-nowrap mb-[70px]">

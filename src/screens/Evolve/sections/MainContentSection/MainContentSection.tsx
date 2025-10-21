@@ -5,8 +5,8 @@ import { Button } from "../../../../components/ui/button";
 const navigationLinks = [
   { label: "How it works", href: "#how-it-works" },
   { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQs", href: "#faqs" },
+  { label: "Vision", href: "#vision" },
+  { label: "FAQs", href: "#FAQ" },
 ];
 
 const circularTextLetters = [
